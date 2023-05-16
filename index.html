@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>I Can Do It!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="css/mainStyle.css">
+</head>
+
+<body>
+  <div class="modalOverlay">
+    <div class="modalPs">
+      <h2 class="modal-title"></h2>
+      <form>
+        <textarea name="" id="" class="modal-text" placeholder="/ AI야 대답해줘"></textarea>
+        <button type="button" class="close">닫기</button>
+      </form>
+    </div>
+  </div>
+
+  <header>
+    <h1>I Can Do It!</h1>
+  </header>
+
+  <div class="container">
+    <div class="board" draggable="true">
+      <div class="board-title">
+        <h3>To Do</h3>
+      </div>
+      <div class="list"></div>
+      <div class="board-action">
+        <div class="add-card-btn">+ 카드 추가하기</div>
+      </div>
+    </div>
+    <div class="board" draggable="true">
+      <div class="board-title">
+        <h3>in progress</h3>
+      </div>
+      <div class="list"></div>
+      <div class="board-action">
+        <div class="add-card-btn">+ 카드 추가하기</div>
+      </div>
+    </div>
+    <div class="board" draggable="true">
+      <div class="board-title">
+        <h3>Done</h3>
+      </div>
+      <div class="list"></div>
+      <div class="board-action">
+        <div class="add-card-btn">+ 카드 추가하기</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="trash" style="display: none;"></div>
+
+  <script type="module" src="js/main.js">
+  
+   import { Configuration, OpenAIApi } from 'https://cdn.skypack.dev/openai';
+   
+   document.querySelector('#send').addEventListener('click', function(){
+   var template = <div class="line">
+   <span class="chat-box">${document.querySelector('#inputText').value}
+   </span> </div>
+   })
+ 
+   document.querySelector('.chat-content').inserrtAdjacentHTML('beforeend', template);
+
+const configuration = new Configuration({
+  apiKey: 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,
+});
+const openai = new OpenAIApi(configuration);
+
+ openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: document.querySelector('#inputText').value,
+  temperature: 0.7,
+  max_tokens: 256,
+  top_p: 1,
+  frequency_penalty: 0,
+  presence_penalty: 0,
+}).then((inputText)=>{
+   console.log(inputText.data.choices[0].text)
+      var template = <div class="line">
+   <span class="chat-box">${document.querySelector('#inputText').value}
+   </span> </div>
+   })
+ 
+   document.querySelector('.chat-content').inserrtAdjacentHTML('beforeend', template);
+})
+</script>
+
+</body>
+
+</html>
