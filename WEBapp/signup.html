@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <section class="signup-form">
+        <h1>회원가입</h1>
+        <br/>
+        <form action="" method="post">
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id">USERNAME</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label for="pw">PASSWORD</label>
+            </div>
+            <div class="int-area">
+                <input type="email" name="mail" id="mail" autocomplete="off" required>
+                <label for="email">E-MAIL</label>
+            </div>
+            <div class="int-area">
+                <input type="tel" name="tel1" required>-
+                <input type="tel" name="tel2" required>-
+                <input type="tel" name="tel3" required>
+                <label for="tel">TEL</label>
+
+            </div> 
+            <div class="btn-signup">
+                <button id="btn1" type="submit">회원가입</button>
+            </div>
+            <div class="btn-back">
+                <button id="btn2" onclick="Login.html">돌아가기</button>
+            </div>
+           
+        </form>
+</body>
+</html>
