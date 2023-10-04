@@ -1,3 +1,4 @@
+style.css
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
  
 *{margin:0; padding:0; box-sizing: border-box;}
@@ -89,18 +90,8 @@ body::before {
     cursor: pointer;
     float: right;
     padding: 10px;
-}
-
-.btn-back {margin-top: 30px;}
-.btn-back button {
-    width: 50%; height: 50px;
-    background: #166cea;
-    font-size: 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    float: right;
-    padding: 10px;
+    text-decoration: none;
+    text-underline-offset: none;
 }
 
 .caption {
@@ -110,4 +101,17 @@ body::before {
 .caption a {
     font-size: 15px; color: #999;
     text-decoration: none;
+}
+
+.caption button {
+    width: 50%; height: 50px;
+    background: #166cea;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    float: right;
+    padding: 10px;
+    text-decoration: none;
+    text-underline-offset: none;
 }
